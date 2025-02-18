@@ -6,39 +6,278 @@
     <title>TheFlask Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
+
+
+  <style> 
+    .navbar-nav .nav-link {
+      position: relative;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: #007bff;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-item {
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8f9fa;
+    }
+
+    /* Adjust body padding for fixed navbar */
+    body {
+      padding-top: 70px;
+    }</style>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+   
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;" >
+      
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logo.png" alt="Logo" width="130" height="70" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="Products.html">Featured</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="features.html">Features</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="about.html">About</a></li>
-                  <li><a class="dropdown-item" href="contactus.html">Contact Us</a></li>
-                  
-                </ul>
-              </li>
-            </ul>
-          </div>
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="contactus.html">Connect with us</a></li>
+                <li><a class="dropdown-item" href="about.html">More about us</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="customersupport.html">Customer Support</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Products
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" href="mens-clothing.html"
+              >Men's Clothing</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="womens-clothing.html"
+              >Women's Clothing</a
+            >
+          </li>
+         
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+<div class="hero-section">
+<div class="text-center">
+  <h1 class="display-4">About TheFlask</h1>
+  <p class="lead">The Feature of the future</p>
+</div>
+</div>
+<div class="container mt-5">
+<div class="row">
+  <div class="col-md-6">
+    <h2>Our Story</h2>
+    <p>
+      TheFlask was born from a simple yet powerful idea—hydration should be smarter, more sustainable, and seamlessly fit into the modern lifestyle. Frustrated with outdated, wasteful water bottles that lacked innovation, our founders set out to create something better. They envisioned a bottle that not only quenched thirst but also enhanced daily life through cutting-edge technology and eco-friendly design.
 
+With a team of passionate designers, engineers, and sustainability advocates, TheFlask quickly became more than just a brand—it became a movement. We integrated smart features like temperature control, hydration tracking, and self-cleaning technology, making hydration effortless and more enjoyable. At the same time, we remained committed to sustainability, using durable, eco-conscious materials to reduce plastic waste and promote a greener planet.
 
+    </p>
+    <p>
+      From the first prototype to the hands of our customers, TheFlask has been on a mission to revolutionize the way people drink water. Every bottle we create represents our dedication to innovation, quality, and the future of hydration. As we continue to grow, we remain focused on our vision: making every sip smarter, greener, and better for the world.
+
+This is just the beginning—join us in shaping the future, one sip at a time.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <img
+      src="/img/founder.webp"
+      class="img-fluid rounded"
+      alt="StyleHub founders"
+    />
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-12">
+    <h2 class="text-center mb-4">Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>2010: The Beginning</h4>
+        <p>
+          Sarah and Michael Thompson start creating custom clothing in
+          their garage.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h4>2012: Online Launch</h4>
+        <p>
+          StyleHub.com is launched, offering a curated collection of
+          handmade clothing.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h4>2015: Expanding Horizons</h4>
+        <p>
+          StyleHub opens its first physical store in San Francisco and
+          expands its product line.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h4>2018: Sustainability Focus</h4>
+        <p>
+          We commit to using sustainable materials and ethical
+          manufacturing practices.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <h4>2023: Global Presence</h4>
+        <p>
+          StyleHub now ships to over 50 countries and has a team of 100+
+          passionate employees.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-4">
+    <img
+      src="/img/meeting.jfif"
+      class="img-fluid rounded mb-3"
+      alt="Our mission"
+    />
+    <h3>Our Mission</h3>
+    <p>
+      "Our mission is to revolutionize hydration with innovative water bottles designed for the future. Combining smart features, sustainable materials, and modern technology, we aim to enhance convenience, efficiency, and eco-friendliness—keeping you refreshed while shaping a better tomorrow.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <img
+      src="/img/Value.gif"
+      class="img-fluid rounded mb-3"
+      alt="Our values"
+    />
+    <h3>Our Values</h3>
+    <ul>
+      <li>Quality craftsmanship</li>
+      <li>Sustainable practices</li>
+      <li>Customer satisfaction</li>
+      <li>Innovation in design</li>
+      <li>Quality & Durability</li>
+      <li>Customer-Centric Design</li>
+      <li>Health & Wellness </li>
+      
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <img
+      src="/img/Team.jpg"
+      class="img-fluid rounded mb-3"
+      alt="Our team"
+    />
+    <h3>Our Team</h3>
+    <p>
+      Our team of innovators and sustainability advocates is dedicated to creating smart, eco-friendly water bottles that redefine hydration for a better future. We combine modern design, advanced technology, and sustainable materials to enhance convenience and efficiency. Together, we are shaping the future—one sip at a time.
+    </p>
+  </div>
+</div>
+</div>
+<div class="bg-light py-5 mt-5">
+<div class="container">
+  <h2 class="text-center mb-4">Join the StyleHub Family</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <p>
+        Be part of our journey and stay updated with the latest trends and
+        exclusive offers.
+      </p>
+      <a href="contactus.html" class="btn btn-secondary btn-lg">Contact Us</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+<footer class="bg-dark text-light text-center py-3 mt-5">
+<p>&copy; 2025 TheFlask. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
 
 
